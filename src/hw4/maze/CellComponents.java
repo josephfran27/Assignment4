@@ -2,9 +2,9 @@ package hw4.maze;
 
 public enum CellComponents {
 	
-	WALL,
-	APERTURE,
-	EXIT
+	WALL, 		//A wall
+	APERTURE, 	//An opening/entrance
+	EXIT		//Exit of the maze
 	
 
 }
