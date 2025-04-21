@@ -9,7 +9,7 @@ public class Cell {
 	private CellComponents down;
 	
 	/**
-	 * This is the cell constructor method. It creates a cell by passing the passed parameters
+	 * This is the cell constructor. It creates a cell by passing the passed parameters
 	 * and applying them using setter functions instead of this.direction for example, which is a safer way of creating 
 	 * the cell and avoiding errors since the parameters are ran through null checks and set to default values.
 	 * @param left: The left component of the cell.
