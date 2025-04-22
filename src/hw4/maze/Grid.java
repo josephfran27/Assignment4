@@ -3,9 +3,9 @@ package hw4.maze;
 import java.util.ArrayList;
 
 public class Grid {
-	
+
 	private ArrayList<Row> rows;
-	
+
 	/**
 	 * This is the grid constructor. The grid is created using the list of row objects.
 	 * @param rows: An ArrayList of the different rows.
@@ -13,7 +13,7 @@ public class Grid {
 	public Grid(ArrayList<Row> rows) {
 		setRows(rows);
 	}
-	
+
 	/**
 	 * Returns a list of the different rows in the grid.
 	 * @return Returns the list of rows.
@@ -21,7 +21,7 @@ public class Grid {
 	public ArrayList<Row> getRows() {
 		return rows;
 	}
-	
+
 	/**
 	 * Creates a grid using the different row objects and performing test cases, similar to the setter
 	 * of the rows.
@@ -33,7 +33,7 @@ public class Grid {
 			this.rows = null;
 		}
 	}
-	
+
 	/**
 	 * Returns the rows in the grid.
 	 */
@@ -41,8 +41,8 @@ public class Grid {
 	public String toString() {
 		return "Grid [rows=" + rows + "]";
 	}
-	
-	
-	
+
+
+
 
 }

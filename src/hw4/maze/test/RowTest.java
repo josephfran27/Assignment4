@@ -1,6 +1,6 @@
 package hw4.maze.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.stream.Stream;
@@ -19,11 +19,11 @@ import hw4.maze.CellComponents;
 import hw4.maze.Row;
 
 class RowTest {
-	
+
 	private static Cell cell0;
 	private static Cell cell1;
 	private static Cell cell2;
-	
+
 	private static Row row;
 
 	@BeforeAll
@@ -38,63 +38,63 @@ class RowTest {
 	void setUp() throws Exception {
 		cell0 = new Cell(CellComponents.EXIT, CellComponents.APERTURE,
 				CellComponents.WALL, CellComponents.APERTURE);
-		
+
 		cell1 = new Cell(CellComponents.APERTURE, CellComponents.WALL,
 				CellComponents.WALL, CellComponents.APERTURE);
-		
+
 		cell2 = new Cell(CellComponents.WALL, CellComponents.WALL,
 				CellComponents.WALL, CellComponents.APERTURE);
-		
+
 		ArrayList<Cell> cells = new ArrayList<>();
-		
+
 		cells.add(cell0);
 		cells.add(cell1);
 		cells.add(cell2);
-		
+
 		row = new Row(cells);
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
 	}
-	
+
 	@Test
 	public void testGetCellsSize() {
 		assertEquals(3, row.getCells().size());
 	}
-	
+
 	@ParameterizedTest
 	@MethodSource("getCellProvider")
 	public void testGetCell(Cell expectedCell, Cell actualCell) {
 		assertEquals(expectedCell, actualCell);
 	}
-	
+
 	private static Stream<Arguments> getCellProvider() {
 		return Stream.of(Arguments.of(cell0, row.getCells().get(0)),
 							Arguments.of(cell1, row.getCells().get(1)),
 							Arguments.of(cell2, row.getCells().get(2)));
 	}
-	
+
 	@Test
 	public void testSetCell() {
 		Cell cell3 = new Cell(CellComponents.WALL, CellComponents.WALL,
 				CellComponents.APERTURE, CellComponents.APERTURE);
-		
+
 		Cell cell4 = new Cell(CellComponents.WALL, CellComponents.APERTURE,
 				CellComponents.APERTURE, CellComponents.APERTURE);
-		
+
 		Cell cell5 = new Cell(CellComponents.APERTURE, CellComponents.WALL,
 				CellComponents.APERTURE, CellComponents.APERTURE);
-		
+
 		ArrayList<Cell> cellList = new ArrayList<>();
 		cellList.add(cell3);
 		cellList.add(cell4);
 		cellList.add(cell5);
 		row.setCells(cellList);
-		
+
 		assertEquals(cellList, row.getCells());
 	}
-	
+
 	@Test
 	void testSetCellsWithNull() {
 		row.setCells(null);
