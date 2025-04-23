@@ -155,9 +155,7 @@ public class Game {
 				}
 	
 				if (left != CellComponents.APERTURE && right != CellComponents.APERTURE && up != CellComponents.APERTURE && down != CellComponents.APERTURE) {
-					if (left != CellComponents.EXIT) {
-						left = CellComponents.APERTURE;
-					}
+					up = CellComponents.APERTURE;
 				}
 					
 	
